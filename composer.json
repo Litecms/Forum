@@ -1,5 +1,5 @@
 {
-    "name": "lavalite/forum",
+    "name": "litecms/forum",
     "description": "Forum package for lavalite.",
     "keywords": ["lavalite", "Forum"],
     "license": "MIT",

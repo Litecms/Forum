@@ -2,9 +2,9 @@ This is a Laravel 5 package that provides forum management facility for lavalite
 
 ## Installation
 
-Begin by installing this package through Composer. Edit your project's `composer.json` file to require `lavalite/forum`.
+Begin by installing this package through Composer. Edit your project's `composer.json` file to require `litecms/forum`.
 
-    "lavalite/forum": "dev-master"
+    "litecms/forum": "dev-master"
 
 Next, update Composer from the Terminal:
 

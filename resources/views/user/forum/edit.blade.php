@@ -2,11 +2,9 @@
     <div class="panel panel-color panel-inverse">
         <div class="panel-heading">
             <h3 class="panel-title">
-                Edit
-                <span>
-                    My Forum
-                </span>
+               {!!Trans('blog::blog.user_names')!!}n>
             </h3>
+            <p class="panel-sub-title m-t-5 text-muted">{!!Trans('forum::forum.create')!!}} [ {{$forum->title}} ]</p>
         </div>
         {!!Form::vertical_open()
         ->id('edit-forum-forum')
@@ -20,9 +18,9 @@
                     <button class="btn btn-warning">
                         Update Forum
                     </button>
-                    <a href="{!!trans_url('/user/forum/forum')!!}" class="btn btn-default waves-effect waves-float m-l-5"> Cancel</a>                        </div> 
+                    <a href="{!!trans_url('/user/forum/forum')!!}" class="btn btn-default waves-effect waves-float m-l-5"> Cancel</a>                        </div>
                 </div>
         </div>
         {!! Form::close() !!}
     </div>
-</div>       
+</div>

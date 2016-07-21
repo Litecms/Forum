@@ -49,9 +49,9 @@
                 <div class="blog-detail-side-category-wraper clearfix">
                     <h3>Categories</h3>
                     <ul>
-                        <li><a href="{{trans_url('forums')}}">All</a><span class="cat-number">{{Forum::count()}}</span></li>
+                        <li class="{{ (Request::is('forums'))? 'active' : ''}}"><a href="{{trans_url('forums')}}">All</a><span class="cat-number">{{Forum::count()}}</span></li>
                         @forelse(Forum::categories() as $key =>  $value)
-                        <li><a href="{{trans_url('forums/category')}}/{{@$key}}">{{$value}}</a><span class="cat-number">{{Forum::countCategory($key)}}</span></li>
+                        <li class="{{(Request::is('*forums/category/'.$key))? 'active' : ''}}"><a href="{{trans_url('forums/category')}}/{{@$key}}">{{$value}}</a><span class="cat-number">{{Forum::countCategory($key)}}</span></li>
                         @empty
                         @endif
                     </ul>

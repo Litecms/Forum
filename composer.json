@@ -1,7 +1,7 @@
 {
     "name": "litecms/forum",
     "description": "Forum package for lavalite.",
-    "keywords": ["lavalite", "Forum"],
+    "keywords": ["lavalite", "litecms","Forum"],
     "license": "MIT",
     "authors": [
         {

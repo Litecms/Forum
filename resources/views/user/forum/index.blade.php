@@ -4,18 +4,15 @@
             <div class="row">
                 <div class="col-sm-6 col-md-6">
                     <h3 class="panel-title">
-                        My
-                        <span>
-                            forums
-                        </span>
+                       {!!Trans('forum::forum.user_names')!!}
                     </h3>
                     <p class="panel-sub-title m-t-5 text-muted">
-                        Sub title goes here with small font
+                       {!!Trans('forum::forum.user_name')!!}
                     </p>
                 </div>
                 <div class="col-sm-6 col-md-6">
                     <div class="row m-t-5">
-                        <div class="col-xs-6 col-sm-8">
+                        <div class="col-xs-12 col-sm-7 m-b-5">
 
                                 {!!Form::open()
                                     ->method('GET')
@@ -32,7 +29,7 @@
                                 {!! Form::close()!!}
 
                         </div>
-                        <div class="col-xs-6 col-sm-4">
+                        <div class="col-xs-12 col-sm-5">
                              <a href="{{ trans_url('/user/forum/forum/create') }}" class="btn btn-success btn-block text-uppercase f-12"> {{ trans('cms.create')  }} forum</a>
                         </div>
                     </div>

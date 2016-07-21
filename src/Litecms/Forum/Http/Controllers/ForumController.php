@@ -33,11 +33,11 @@ class ForumController extends BaseController
     {
 
         $forums = $this->repository
-                ->pushCriteria(new \Litecms\Forum\Repositories\Criteria\ForumPublicCriteria())
-                ->pushCriteria(new \Litecms\Forum\Repositories\Criteria\ForumQuestionCriteria())
-                ->scopeQuery(function ($query) {
-                    return $query->orderBy('id', 'DESC');
-                })->all();
+            ->pushCriteria(new \Litecms\Forum\Repositories\Criteria\ForumPublicCriteria())
+            ->pushCriteria(new \Litecms\Forum\Repositories\Criteria\ForumQuestionCriteria())
+            ->scopeQuery(function ($query) {
+                return $query->orderBy('id', 'DESC');
+            })->all();
 
         return $this->theme->of('forum::public.forum.index', compact('forums'))->render();
     }

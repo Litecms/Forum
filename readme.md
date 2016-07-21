@@ -1,4 +1,4 @@
-This is a Laravel 5 package that provides forum management facility for lavalite framework.
+This is a Litecms package that provides forum management facility for lavalite framework.
 
 ## Installation
 
@@ -40,8 +40,12 @@ Language
 
 Views public and admin
 
-    php artisan vendor:publish --provider="Litecms\Forum\Providers\ForumServiceProvider" --tag="view-public"
-    php artisan vendor:publish --provider="Litecms\Forum\Providers\ForumServiceProvider" --tag="view-admin"
+    php artisan vendor:publish --provider="Litecms\Forum\Providers\ForumServiceProvider" --tag="view"
+
+Public folders
+
+php artisan vendor:publish --provider="Litecms\Forum\Providers\ForumServiceProvider" --tag="public"
+    
 
 Publish admin views only if it is necessary.
 

@@ -1,4 +1,4 @@
-
+  {!! Form::hidden('upload_folder')!!}  
         <div class="col-sm-6 col-md-6">
             {!! Form::select('parent_id')
             -> required()

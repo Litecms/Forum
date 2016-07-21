@@ -27,7 +27,7 @@ return [
         'slugs'         => ['slug' => 'title'],
         'dates'         => ['deleted_at'],
         'appends'       => [],
-        'fillable'      => ['user_id', 'parent_id', 'category_id', 'title', 'description', 'status', 'published', 'best_answer'],
+        'fillable'      => ['user_id', 'parent_id', 'category_id', 'title', 'description', 'status', 'published', 'best_answer','upload_folder'],
         'translate'     => [],
 
         'upload-folder' => '/uploads/forum/forum',
@@ -58,7 +58,7 @@ return [
         'slugs'         => ['slug' => 'name'],
         'dates'         => ['deleted_at'],
         'appends'       => [],
-        'fillable'      => ['user_id', 'name', 'status'],
+        'fillable'      => ['user_id', 'name', 'status','upload_folder'],
         'translate'     => [],
 
         'upload-folder' => '/uploads/forum/category',

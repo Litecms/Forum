@@ -2,7 +2,7 @@
     <div class="panel panel-color panel-inverse">
         <div class="panel-heading">
             <div class="row">
-                <div class="col-sm-6 col-md-6">
+                <div class="col-sm-5 col-md-5">
                     <h3 class="panel-title">
                        {!!Trans('forum::forum.user_names')!!}
                     </h3>
@@ -10,7 +10,7 @@
                        {!!Trans('forum::forum.user_name')!!}
                     </p>
                 </div>
-                <div class="col-sm-6 col-md-6">
+                <div class="col-sm-7 col-md-7">
                     <div class="row m-t-5">
                         <div class="col-xs-12 col-sm-7 m-b-5">
 

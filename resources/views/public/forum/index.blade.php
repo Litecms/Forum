@@ -39,12 +39,12 @@
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <div class="blog-detail-side-search-wraper">
                     {!!Form::open()->method('GET')
-                          ->action(URL::to('forums/forums'))!!}
+                          ->action(URL::to('forums'))!!}
                     {!!Form::text('search')->type('text')->class('form-control')->placeholder('Search for Discussions')->raw()!!}
                     <i class="icon-magnifier">
                     </i>
                      {!! Form::close()!!}
-                      
+
                 </div>
                 <div class="blog-detail-side-category-wraper clearfix">
                     <h3>Categories</h3>

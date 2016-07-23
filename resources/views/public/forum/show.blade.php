@@ -27,7 +27,7 @@
                                     <img src="{!! URL::to('/image/xs/'.@$photo['efolder'])!!}/{!! @$photo['file'] !!}" class="media-object img-circle" alt="profile"/>
                                 @else
                                     <img src="{!!trans_url('img/testimonial1.jpg')!!}" class="media-object img-circle">
-                                @endif 
+                                @endif
                             </a>
                         </div>
                         <div class="media-body">
@@ -70,7 +70,7 @@
                                         <img src="{!! URL::to('/image/xs/'.@$photo['efolder'])!!}/{!! @$photo['file'] !!}" class="media-object img-circle" alt="profile"/>
                                     @else
                                         <img src="{!!trans_url('img/testimonial1.jpg')!!}" class="media-object img-circle">
-                                    @endif 
+                                    @endif
                                 </a>
                             </div>
                             <div class="media-body">
@@ -78,7 +78,7 @@
                                 <p>{!! $value['description'] !!}</p>
                             </div>
                           </div>
-                    </div>                
+                    </div>
                     @endif
                 @empty
                 @endif
@@ -116,7 +116,7 @@
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <div class="blog-detail-side-search-wraper">
                  {!!Form::open()->method('GET')
-                 ->action(URL::to('forums/forums'))!!}
+                 ->action(URL::to('forums'))!!}
                     {!!Form::text('search')->type('text')->class('form-control')->placeholder('Search for Discussions')->raw()!!}
                     <i class="icon-magnifier"></i>
                     {!! Form::close()!!}

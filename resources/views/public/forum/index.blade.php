@@ -14,21 +14,16 @@
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 m-t-30">
-                @forelse($forums as $forums)
+                @forelse($forums as $forum)
                 <div class="discuss-blocks">
                     <div class="media">
                       <div class="media-left media-middle">
-                        <?php $photo = $forums['user']['photo'];?>
-                        @if(!empty($forums['user']['photo']['efolder']))
-                            <img class="media-object img-circle" src="{!! URL::to('/image/xs/'.@$forums['user']['photo']['efolder'])!!}/{!! @$forums['user']['photo']['file'] !!}">
-                        @else
-                            <img class="media-object img-circle" src="{!! URL::to('img/testimonial1.jpg') !!}">
-                        @endif
+                        <img class="media-object img-circle" src="{!!$forum->user->picture!!}">
                       </div>
                       <div class="media-body">
-                        <h4 class="media-heading"><a href="{{trans_url('forums/forums')}}/{{@$forums['slug']}}">{{@$forums['title']}}</a></h4>
-                        <p class="text-muted">{!! date("d M, Y",strtotime($forums['created_at']))!!} by <a href="#">{!! $forums['user']['name'] !!}</a></p>
-                        <span class="answer-count">{!! Forum::answers($forums->id) !!}</span>
+                        <h4 class="media-heading"><a href="{{trans_url('forums/forums')}}/{{@$forum['slug']}}">{{@$forum['title']}}</a></h4>
+                        <p class="text-muted">{!! format_date($forum['created_at'])!!} by <a href="#">{!! $forum->user->name !!}</a></p>
+                        <span class="answer-count">{!! Forum::answers($forum->id) !!}</span>
                       </div>
                     </div>
                 </div>
@@ -39,7 +34,7 @@
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <div class="blog-detail-side-search-wraper">
                     {!!Form::open()->method('GET')
-                          ->action(URL::to('forums'))!!}
+                          ->action(url('forums'))!!}
                     {!!Form::text('search')->type('text')->class('form-control')->placeholder('Search for Discussions')->raw()!!}
                     <i class="icon-magnifier">
                     </i>

@@ -30,7 +30,7 @@ return [
         'fillable'      => ['user_id', 'parent_id', 'category_id', 'title', 'description', 'status', 'published', 'best_answer','upload_folder'],
         'translate'     => [],
 
-        'upload-folder' => '/uploads/forum/forum',
+        'upload_folder' => '/forum/forum',
         'uploads'       => [
             'single'   => [],
             'multiple' => [],
@@ -61,7 +61,7 @@ return [
         'fillable'      => ['user_id', 'name', 'status','upload_folder'],
         'translate'     => [],
 
-        'upload-folder' => '/uploads/forum/category',
+        'upload_folder' => '/forum/category',
         'uploads'       => [
             'single'   => ['image'],
             'multiple' => [],

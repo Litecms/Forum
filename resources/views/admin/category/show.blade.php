@@ -28,7 +28,7 @@
                 </div>
                 <div class='col-md-6 col-sm-12'>
                   <label>Image</label>
-                      {!! Filer::editor('image', @$category['image'],1) !!}
+                     {!!@$category->fileShow('image')!!}
                 </div>
             </div>
         {!! Form::close() !!}

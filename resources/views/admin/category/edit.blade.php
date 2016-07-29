@@ -24,8 +24,8 @@
             </div>
             <div class='col-md-6 col-sm-12'>
                   <label>Image</label>
-                      {!!Filer::uploader('image',@$category->getUploadURL('image'),1)!!}
-                      {!! Filer::editor('image', @$category['image'],1) !!}
+                       {!!@$category->fileUpload('image')!!}
+                     {!!@$category->fileEdit('image')!!}
                 </div>
         </div>
         {!!Form::close()!!}

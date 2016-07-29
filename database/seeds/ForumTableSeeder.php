@@ -8,7 +8,9 @@ class ForumTableSeeder extends Seeder
     {
         DB::table('forums')->insert([
 
-            ['user_id'    => '1',
+            [
+                'user_id'     => '1',
+                'user_type'   => 'App\\User',
                 'parent_id'   => '0',
                 'category_id' => '2',
                 'slug'        => 'lorem-ipsum-dolor-sit-amet',
@@ -23,6 +25,7 @@ class ForumTableSeeder extends Seeder
             ],
             [
                 'user_id'     => '1',
+                'user_type'   => 'App\\User',
                 'parent_id'   => '1',
                 'category_id' => '0',
                 'slug'        => '',
@@ -37,6 +40,7 @@ class ForumTableSeeder extends Seeder
             ],
             [
                 'user_id'     => '1',
+                'user_type'   => 'App\\User',
                 'parent_id'   => '1',
                 'category_id' => '0',
                 'slug'        => '-2',
@@ -51,6 +55,7 @@ class ForumTableSeeder extends Seeder
             ],
             [
                 'user_id'     => '1',
+                'user_type'   => 'App\\User',
                 'parent_id'   => '1',
                 'category_id' => '0',
                 'slug'        => '-3',

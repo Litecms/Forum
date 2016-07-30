@@ -46,9 +46,9 @@ class ForumAdminController extends BaseController
                     return $query->orderBy('id', 'DESC');
                 })->paginate($pageLimit);
 
-            $forums['recordsTotal']    = $forums['meta']['pagination']['total'];
+            $forums['recordsTotal'] = $forums['meta']['pagination']['total'];
             $forums['recordsFiltered'] = $forums['meta']['pagination']['total'];
-            $forums['request']         = $request->all();
+            $forums['request'] = $request->all();
             return response()->json($forums, 200);
 
         }
@@ -104,9 +104,10 @@ class ForumAdminController extends BaseController
     public function store(ForumAdminRequest $request)
     {
         try {
-            $attributes            = $request->all();
+            $attributes = $request->all();
             $attributes['user_id'] = user_id('admin.web');
-            $forum                 = $this->repository->create($attributes);
+            $attributes['user_type'] = user_type();
+            $forum = $this->repository->create($attributes);
 
             return response()->json([
                 'message'  => trans('messages.success.updated', ['Module' => trans('forum::forum.name')]),

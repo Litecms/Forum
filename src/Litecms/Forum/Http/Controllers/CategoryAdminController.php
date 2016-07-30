@@ -59,9 +59,9 @@ class CategoryAdminController extends BaseController
                     return $query->orderBy('id', 'DESC');
                 })->paginate($pageLimit);
 
-            $categories['recordsTotal']    = $categories['meta']['pagination']['total'];
+            $categories['recordsTotal'] = $categories['meta']['pagination']['total'];
             $categories['recordsFiltered'] = $categories['meta']['pagination']['total'];
-            $categories['request']         = $request->all();
+            $categories['request'] = $request->all();
             return response()->json($categories, 200);
 
         }
@@ -117,9 +117,10 @@ class CategoryAdminController extends BaseController
     public function store(CategoryAdminRequest $request)
     {
         try {
-            $attributes            = $request->all();
+            $attributes = $request->all();
             $attributes['user_id'] = user_id('admin.web');
-            $category              = $this->repository->create($attributes);
+            $attributes['user_type'] = user_type();
+            $category = $this->repository->create($attributes);
 
             return response()->json([
                 'message'  => trans('messages.success.updated', ['Module' => trans('forum::category.name')]),

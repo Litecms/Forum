@@ -3,7 +3,7 @@
       <div class="media-left media-middle">
             <a href="#">
               
-                <img class="media-object img-circle" src="{!!$value->user->picture!!}">
+                <img class="media-object img-circle" src="{!!@$value->user->picture!!}">
               
             </a>
       </div>

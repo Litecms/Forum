@@ -99,9 +99,10 @@ class CategoryUserController extends BaseController
     public function store(CategoryUserRequest $request)
     {
         try {
-            $attributes            = $request->all();
+            $attributes = $request->all();
             $attributes['user_id'] = user_id();
-            $category              = $this->repository->create($attributes);
+            $attributes['user_type'] = user_type();
+            $category = $this->repository->create($attributes);
 
             return redirect(trans_url('/user/forum/category'))
                 ->with('message', trans('messages.success.created', ['Module' => trans('forum::category.name')]))

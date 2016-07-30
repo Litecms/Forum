@@ -10,10 +10,11 @@ use Litepie\Hashids\Traits\Hashids;
 use Litepie\Repository\Traits\PresentableTrait;
 use Litepie\Revision\Traits\Revision;
 use Litepie\Trans\Traits\Trans;
+use Litepie\User\Traits\UserModel;
 
 class Forum extends Model
 {
-    use Filer, SoftDeletes, Hashids, Slugger, Trans, Revision, PresentableTrait;
+    use Filer, SoftDeletes, Hashids, Slugger, Trans, Revision, PresentableTrait, UserModel;
 
     /**
      * Configuartion for the model.
@@ -22,11 +23,6 @@ class Forum extends Model
      */
     protected $config = 'package.forum.forum';
 
-    public function user()
-    {
-
-        return $this->belongsTo('App\User', 'user_id');
-    }
 
     public function category()
     {

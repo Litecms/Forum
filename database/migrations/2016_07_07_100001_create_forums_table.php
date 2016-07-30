@@ -26,6 +26,7 @@ class CreateForumsTable extends Migration
             $table->tinyInteger('best_answer')->nullable();
             $table->string('slug', 200)->nullable();
             $table->enum('status', ['show', 'hide'])->default('hide')->nullable();
+            $table->string('user_type', 200)->nullable();
             $table->integer('user_id')->nullable();
             $table->string('upload_folder', 100)->nullable();
             $table->softDeletes();

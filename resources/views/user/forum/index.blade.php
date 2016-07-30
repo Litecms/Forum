@@ -37,28 +37,26 @@
             </div>
         </div>
 
-        @foreach($forums as $forums)
-        <div class="panel-body" id="{!! $forums->getRouteKey() !!}">
+        @foreach($forums as $forum)
+        <div class="panel-body" id="{!! $forum->getRouteKey() !!}">
             <div class="popular-post-block">
                 <div class="row">
                     <div class="dashboard-blog-pic">
-                        <?php $photo = $forums->user->photo;?>
-                        @if(!empty($photo))
-                          <img src="{!! URL::to('/image/xs/'.@$photo['efolder'])!!}/{!! @$photo['file'] !!}">
-                        @else
-                        <img src="{!!trans_url('img/avatar/default-avatar-pic.png')!!}">
-                        @endif
+                       
+                       
+                          <img src="{!!$forum->user->picture!!}">
+                        
                     </div>
                     <div class="dashboard-blog-desc popular-post-inner">
                         <div class="popular-post-desc">
-                            <h4><a href="{{ trans_url('/user') }}/forum/forum/{!! $forums->getRouteKey() !!}">{{$forums['title']}}</a></h4>
-                            <span>Total Answers : {!! Forum::answers($forums->id) !!}</span>
+                            <h4><a href="{{ trans_url('/user') }}/forum/forum/{!! $forum->getRouteKey() !!}">{{$forum['title']}}</a></h4>
+                            <span>Total Answers : {!! Forum::answers($forum->id) !!}</span>
                         </div>
                     </div>
                     <div class="dashboard-blog-actions  text-right">
-                        <a href="{{ trans_url('/user') }}/forum/forum/{!! $forums->getRouteKey() !!}" class="btn btn-icon waves-effect btn-success m-b-5"><i class="fa fa-eye"></i></a>
-                        <a href="{{ trans_url('/user') }}/forum/forum/{!! $forums->getRouteKey() !!}/edit" class="btn btn-icon waves-effect btn-primary m-b-5"><i class="fa fa-pencil"></i></a>
-                        <a data-action="DELETE"  data-href="{{ trans_url('/user/forum/forum') }}/{!! $forums->getRouteKey() !!}" class="btn btn-icon waves-effect btn-danger" data-remove="{!! $forums->getRouteKey() !!}"><i class="fa fa-trash"></i></a>
+                        <a href="{{ trans_url('/user') }}/forum/forum/{!! $forum->getRouteKey() !!}" class="btn btn-icon waves-effect btn-success m-b-5"><i class="fa fa-eye"></i></a>
+                        <a href="{{ trans_url('/user') }}/forum/forum/{!! $forum->getRouteKey() !!}/edit" class="btn btn-icon waves-effect btn-primary m-b-5"><i class="fa fa-pencil"></i></a>
+                        <a data-action="DELETE"  data-href="{{ trans_url('/user/forum/forum') }}/{!! $forum->getRouteKey() !!}" class="btn btn-icon waves-effect btn-danger" data-remove="{!! $forum->getRouteKey() !!}"><i class="fa fa-trash"></i></a>
                     </div>
                </div>
            </div>

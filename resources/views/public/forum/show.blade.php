@@ -22,16 +22,12 @@
                       <li class="media">
                         <div class="media-left">
                             <a href="#">
-                                <?php $photo = @$forum['user']['photo'];?>
-                                @if(!empty($photo))
-                                    <img src="{!! URL::to('/image/xs/'.@$photo['efolder'])!!}/{!! @$photo['file'] !!}" class="media-object img-circle" alt="profile"/>
-                                @else
-                                    <img src="{!!trans_url('img/testimonial1.jpg')!!}" class="media-object img-circle">
-                                @endif
+                                <img src="{!! url($forum->user->picture) !!}" class="media-object img-circle" alt="profile"/>
+
                             </a>
                         </div>
                         <div class="media-body">
-                            <h4 class="media-heading">{!! @$forum['user']['name'] !!}  <span class="pull-right">{!! date("d M, Y",strtotime(@$forum['created_at']))!!}</span></h4>
+                            <h4 class="media-heading">{!! @$forum->user->name !!}  <span class="pull-right">{!! format_date($forum['created_at'])!!}</span></h4>
                             <p>{!! $forum['description'] !!}</p>
                             <div class="dashed-border"></div>
                             @forelse($forums as $value)
@@ -39,16 +35,12 @@
                                 <div class="media">
                                   <div class="media-left media-middle">
                                     <a href="#">
-                                        <?php $photo = @$value['user']['photo'];?>
-                                        @if(!empty($photo))
-                                            <img src="{!! URL::to('/image/xs/'.@$photo['efolder'])!!}/{!! @$photo['file'] !!}" class="media-object img-circle" alt="profile"/>
-                                        @else
-                                            <img class="media-object img-circle" src="{!!trans_url('img/testimonial3.jpg')!!}" alt="...">
-                                        @endif
+                                        <img src="{!! url($value->user->picture) !!}" class="media-object img-circle" alt="profile"/>
+
                                     </a>
                                   </div>
                                   <div class="media-body">
-                                    <h4 class="media-heading">{!! @$value['user']['name'] !!} <i class="ion ion-checkmark-circled text-danger"></i><span class="pull-right">{!! date("d M, Y",strtotime($value['created_at']))!!}</span></h4>
+                                    <h4 class="media-heading">{!! @$forum->user->name !!} <i class="ion ion-checkmark-circled text-danger"></i><span class="pull-right">{!! format_date($forum['created_at'])!!}</span></h4>
                                     <p>{!! @$value['description'] !!}</p>
                                   </div>
                                 </div>
@@ -65,16 +57,11 @@
                           <div class="media">
                             <div class="media-left media-middle">
                                 <a href="#">
-                                    <?php $photo = @$value['user']['photo'];?>
-                                    @if(!empty($photo))
-                                        <img src="{!! URL::to('/image/xs/'.@$photo['efolder'])!!}/{!! @$photo['file'] !!}" class="media-object img-circle" alt="profile"/>
-                                    @else
-                                        <img src="{!!trans_url('img/testimonial1.jpg')!!}" class="media-object img-circle">
-                                    @endif
+                                        <img src="{!! url($value->user->picture) !!}" class="media-object img-circle" alt="profile"/>
                                 </a>
                             </div>
                             <div class="media-body">
-                                <h4 class="media-heading">{!! @$value['user']['name'] !!}  <span class="pull-right">{!! date("d M, Y",strtotime(@$value['created_at']))!!}</span></h4>
+                                <h4 class="media-heading">{!! @$forum->user->name !!}  <span class="pull-right">{!! format_date($forum['created_at'])!!}</span></h4>
                                 <p>{!! $value['description'] !!}</p>
                             </div>
                           </div>
@@ -116,7 +103,7 @@
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <div class="blog-detail-side-search-wraper">
                  {!!Form::open()->method('GET')
-                 ->action(URL::to('forums'))!!}
+                 ->action(url('forums'))!!}
                     {!!Form::text('search')->type('text')->class('form-control')->placeholder('Search for Discussions')->raw()!!}
                     <i class="icon-magnifier"></i>
                     {!! Form::close()!!}

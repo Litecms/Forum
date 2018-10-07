@@ -5,7 +5,7 @@ namespace Litecms;
 use DB;
 use Illuminate\Database\Seeder;
 
-class ForumQuestionTableSeeder extends Seeder
+class ForumTableSeeder extends Seeder
 {
     public function run()
     {
@@ -40,6 +40,13 @@ This is my controller:', 'slug' => 'getting-all-image-paths-inside-public-direct
 
         ]);
 
+        DB::table(config('litecms.forum.category.model.table'))->insert([
+            ['id' => '1', 'name' => 'Laravel', 'slug' => 'laravel', 'status' => 'show', 'user_id' => '1', 'user_type' => 'App\\User', 'upload_folder' => null, 'deleted_at' => null, 'created_at' => '2018-06-26 11:19:44', 'updated_at' => '2018-06-26 11:19:44'],
+            ['id' => '2', 'name' => 'General', 'slug' => 'general', 'status' => 'show', 'user_id' => '1', 'user_type' => 'App\\User', 'upload_folder' => null, 'deleted_at' => null, 'created_at' => '2018-06-26 11:21:07', 'updated_at' => '2018-06-26 11:21:07'],
+            ['id' => '3', 'name' => 'JavaScript', 'slug' => 'javascript', 'status' => 'show', 'user_id' => '1', 'user_type' => 'App\\User', 'upload_folder' => null, 'deleted_at' => null, 'created_at' => '2018-06-26 11:21:36', 'updated_at' => '2018-06-26 11:21:36'],
+            ['id' => '4', 'name' => 'Guides', 'slug' => 'guides', 'status' => 'show', 'user_id' => '1', 'user_type' => 'App\\User', 'upload_folder' => null, 'deleted_at' => null, 'created_at' => '2018-06-26 11:21:56', 'updated_at' => '2018-06-26 11:21:56'],
+        ]);
+
         DB::table('permissions')->insert([
             [
                 'slug' => 'forum.question.view',
@@ -57,6 +64,38 @@ This is my controller:', 'slug' => 'getting-all-image-paths-inside-public-direct
                 'slug' => 'forum.question.delete',
                 'name' => 'Delete Question',
             ],
+            [
+                'slug' => 'forum.category.view',
+                'name' => 'View Category',
+            ],
+            [
+                'slug' => 'forum.category.create',
+                'name' => 'Create Category',
+            ],
+            [
+                'slug' => 'forum.category.edit',
+                'name' => 'Update Category',
+            ],
+            [
+                'slug' => 'forum.category.delete',
+                'name' => 'Delete Category',
+            ],
+            [
+                'slug'      => 'forum.response.view',
+                'name'      => 'View Response',
+            ],
+            [
+                'slug'      => 'forum.response.create',
+                'name'      => 'Create Response',
+            ],
+            [
+                'slug'      => 'forum.response.edit',
+                'name'      => 'Update Response',
+            ],
+            [
+                'slug'      => 'forum.response.delete',
+                'name'      => 'Delete Response',
+            ],
 
         ]);
 
@@ -73,24 +112,24 @@ This is my controller:', 'slug' => 'getting-all-image-paths-inside-public-direct
                 'order'       => 190,
                 'status'      => 1,
             ],
-
             [
-                'parent_id'   => 2,
+                'parent_id'   => 1,
                 'key'         => null,
-                'url'         => 'user/forum/question',
-                'name'        => 'Question',
+                'url'         => 'admin/forum/category',
+                'name'        => 'Category',
                 'description' => null,
-                'icon'        => 'icon-book-open',
+                'icon'        => 'fa fa-newspaper-o',
                 'target'      => null,
                 'order'       => 190,
                 'status'      => 1,
             ],
+ 
 
             [
-                'parent_id'   => 3,
+                'parent_id'   => 4,
                 'key'         => null,
                 'url'         => 'question',
-                'name'        => 'Question',
+                'name'        => 'Forums',
                 'description' => null,
                 'icon'        => null,
                 'target'      => null,

@@ -38,7 +38,7 @@ class ResponsePublicController extends BaseController
         })->paginate();
 
 
-        return $this->response->title(trans('forum::response.names'))
+        return $this->response->setMetaTitle(trans('forum::response.names'))
             ->view('forum::public.response.index')
             ->data(compact('responses'))
             ->output();
@@ -60,7 +60,7 @@ class ResponsePublicController extends BaseController
         })->paginate();
 
 
-        return $this->response->title(trans('forum::response.names'))
+        return $this->response->setMetaTitle(trans('forum::response.names'))
             ->view('forum::public.response.index')
             ->data(compact('responses'))
             ->output();
@@ -80,7 +80,7 @@ class ResponsePublicController extends BaseController
                          ->where('slug', $slug);
         })->first(['*']);
 
-        return $this->response->title($$response->name . trans('forum::response.name'))
+        return $this->response->setMetaTitle($$response->name . trans('forum::response.name'))
             ->view('forum::public.response.show')
             ->data(compact('response'))
             ->output();

@@ -53,7 +53,7 @@ class ResponseResourceController extends BaseController
 
         $responses = $this->repository->paginate();
 
-        return $this->response->title(trans('forum::response.names'))
+        return $this->response->setMetaTitle(trans('forum::response.names'))
             ->view('forum::response.index', true)
             ->data(compact('responses'))
             ->output();
@@ -76,7 +76,7 @@ class ResponseResourceController extends BaseController
             $view = 'forum::response.new';
         }
 
-        return $this->response->title(trans('app.view') . ' ' . trans('forum::response.name'))
+        return $this->response->setMetaTitle(trans('app.view') . ' ' . trans('forum::response.name'))
             ->data(compact('response'))
             ->view($view, true)
             ->output();
@@ -93,7 +93,7 @@ class ResponseResourceController extends BaseController
     {
 
         $response = $this->repository->newInstance([]);
-        return $this->response->title(trans('app.new') . ' ' . trans('forum::response.name')) 
+        return $this->response->setMetaTitle(trans('app.new') . ' ' . trans('forum::response.name')) 
             ->view('forum::response.create', true) 
             ->data(compact('response'))
             ->output();
@@ -143,7 +143,7 @@ class ResponseResourceController extends BaseController
      */
     public function edit(ResponseRequest $request, Response $response)
     {
-        return $this->response->title(trans('app.edit') . ' ' . trans('forum::response.name'))
+        return $this->response->setMetaTitle(trans('app.edit') . ' ' . trans('forum::response.name'))
             ->view('forum::response.edit', true)
             ->data(compact('response'))
             ->output();

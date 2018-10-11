@@ -232,7 +232,7 @@ This is my controller:',
             [
                 'parent_id'   => 4,
                 'key'         => null,
-                'url'         => 'question',
+                'url'         => 'forums',
                 'name'        => 'Forums',
                 'description' => null,
                 'icon'        => null,

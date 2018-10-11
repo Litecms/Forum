@@ -18,7 +18,7 @@ Route::group(['prefix' => set_route_guard('web').'/forum'], function () {
 
 // Public  routes for question
 Route::get('question/popular/{period?}', 'QuestionPublicController@popular');
-Route::get('discussions/', 'QuestionPublicController@index');
+Route::get('forums/', 'QuestionPublicController@index');
 Route::get('newdiscussion/', 'QuestionPublicController@newdiscussion');
 Route::get('discussion/{slug?}', 'QuestionPublicController@show');
 

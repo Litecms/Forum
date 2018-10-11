@@ -49,7 +49,7 @@ class QuestionResourceController extends BaseController
         $user_id = user_id();
         $questions = $this->repository->questions($user_id);
 
-        return $this->response->title(trans('forum::question.names'))
+        return $this->response->setMetaTitle(trans('forum::question.names'))
             ->view('forum::question.index', true)
             ->data(compact('questions', 'view'))
             ->output();
@@ -72,7 +72,7 @@ class QuestionResourceController extends BaseController
             $view = 'forum::question.new';
         }
 
-        return $this->response->title(trans('app.view') . ' ' . trans('forum::question.name'))
+        return $this->response->setMetaTitle(trans('app.view') . ' ' . trans('forum::question.name'))
             ->data(compact('question'))
             ->view($view, true)
             ->output();
@@ -89,7 +89,7 @@ class QuestionResourceController extends BaseController
     {
 
         $question = $this->repository->newInstance([]);
-        return $this->response->title(trans('app.new') . ' ' . trans('forum::question.name')) 
+        return $this->response->setMetaTitle(trans('app.new') . ' ' . trans('forum::question.name')) 
             ->view('forum::question.create', true) 
             ->data(compact('question'))
             ->output();
@@ -135,7 +135,7 @@ class QuestionResourceController extends BaseController
      */
     public function edit(QuestionRequest $request, Question $question)
     { 
-        return $this->response->title(trans('forum::question.name'))
+        return $this->response->setMetaTitle(trans('forum::question.name'))
             ->view('forum::public.question.newdiscussion')
             ->data(compact('question'))
             ->output();

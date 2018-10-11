@@ -38,7 +38,7 @@ class QuestionPublicController extends BaseController
         })->paginate(8);
 
 
-        return $this->response->title(trans('forum::question.names'))
+        return $this->response->setMetaTitle(trans('forum::question.names'))
             ->view('forum::public.question.index')
             ->data(compact('questions'))
             ->output();
@@ -60,7 +60,7 @@ class QuestionPublicController extends BaseController
         })->paginate();
 
 
-        return $this->response->title(trans('forum::question.names'))
+        return $this->response->setMetaTitle(trans('forum::question.names'))
             ->view('forum::public.question.index')
             ->data(compact('questions'))
             ->output();
@@ -82,7 +82,7 @@ class QuestionPublicController extends BaseController
         $question->increment('viewcount');
 
 // return view('forum::public.question.show', compact('question'));
-        return $this->response->title(trans('forum::question.name'))
+        return $this->response->setMetaTitle(trans('forum::question.name'))
             ->view('forum::public.question.show')
             ->data(compact('question'))
             ->output();
@@ -91,7 +91,7 @@ class QuestionPublicController extends BaseController
     protected function newdiscussion()
     {
         $question= array('title' =>'', 'question' =>'', 'category_id' =>'');
-        return $this->response->title(trans('forum::question.name'))
+        return $this->response->setMetaTitle(trans('forum::question.name'))
             ->view('forum::public.question.newdiscussion')
             ->data(compact('question'))
             ->output();

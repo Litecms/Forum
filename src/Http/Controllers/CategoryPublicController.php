@@ -38,7 +38,7 @@ class CategoryPublicController extends BaseController
         })->paginate();
 
 
-        return $this->response->title(trans('forum::category.names'))
+        return $this->response->setMetaTitle(trans('forum::category.names'))
             ->view('forum::public.category.index')
             ->data(compact('categories'))
             ->output();
@@ -60,7 +60,7 @@ class CategoryPublicController extends BaseController
         })->paginate();
 
 
-        return $this->response->title(trans('forum::category.names'))
+        return $this->response->setMetaTitle(trans('forum::category.names'))
             ->view('forum::public.category.index')
             ->data(compact('categories'))
             ->output();
@@ -81,7 +81,7 @@ class CategoryPublicController extends BaseController
                          ->where('slug', $slug);
         })->first(['*']);
 
-        return $this->response->title(@$category->name . trans('forum::category.name'))
+        return $this->response->setMetaTitle(@$category->name . trans('forum::category.name'))
             ->view('forum::public.category.show')
             ->data(compact('category'))
             ->output();

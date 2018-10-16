@@ -1,5 +1,5 @@
 
-@include('forum::public.question.partial.header')
+@include('forum::question.partial.header')
 
 
 <section class="content bg-grey">

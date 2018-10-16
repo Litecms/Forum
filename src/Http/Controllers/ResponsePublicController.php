@@ -39,7 +39,7 @@ class ResponsePublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('forum::response.names'))
-            ->view('forum::public.response.index')
+            ->view('forum::response.index')
             ->data(compact('responses'))
             ->output();
     }
@@ -61,7 +61,7 @@ class ResponsePublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('forum::response.names'))
-            ->view('forum::public.response.index')
+            ->view('forum::response.index')
             ->data(compact('responses'))
             ->output();
     }
@@ -81,7 +81,7 @@ class ResponsePublicController extends BaseController
         })->first(['*']);
 
         return $this->response->setMetaTitle($$response->name . trans('forum::response.name'))
-            ->view('forum::public.response.show')
+            ->view('forum::response.show')
             ->data(compact('response'))
             ->output();
     }

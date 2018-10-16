@@ -39,7 +39,7 @@ class QuestionPublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('forum::question.names'))
-            ->view('forum::public.question.index')
+            ->view('forum::question.index')
             ->data(compact('questions'))
             ->output();
     }
@@ -61,7 +61,7 @@ class QuestionPublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('forum::question.names'))
-            ->view('forum::public.question.index')
+            ->view('forum::question.index')
             ->data(compact('questions'))
             ->output();
     }
@@ -81,9 +81,9 @@ class QuestionPublicController extends BaseController
         })->first(['*']);
         $question->increment('viewcount');
 
-// return view('forum::public.question.show', compact('question'));
+// return view('forum::question.show', compact('question'));
         return $this->response->setMetaTitle(trans('forum::question.name'))
-            ->view('forum::public.question.show')
+            ->view('forum::question.show')
             ->data(compact('question'))
             ->output();
     }
@@ -92,7 +92,7 @@ class QuestionPublicController extends BaseController
     {
         $question= array('title' =>'', 'question' =>'', 'category_id' =>'');
         return $this->response->setMetaTitle(trans('forum::question.name'))
-            ->view('forum::public.question.newdiscussion')
+            ->view('forum::question.newdiscussion')
             ->data(compact('question'))
             ->output();
     }

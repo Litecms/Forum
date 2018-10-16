@@ -136,7 +136,7 @@ class QuestionResourceController extends BaseController
     public function edit(QuestionRequest $request, Question $question)
     { 
         return $this->response->setMetaTitle(trans('forum::question.name'))
-            ->view('forum::public.question.newdiscussion')
+            ->view('forum::question.newdiscussion')
             ->data(compact('question'))
             ->output();
     }

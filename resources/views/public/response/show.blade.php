@@ -1,10 +1,10 @@
-            @include('forum::public.response.partial.header')
+            @include('forum::response.partial.header')
 
             <section class="single">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3">
-                            @include('forum::public.response.partial.aside')
+                            @include('forum::response.partial.aside')
                         </div>
                         <div class="col-md-9 ">
                             <div class="area">

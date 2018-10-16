@@ -1,4 +1,4 @@
-            @include('forum::public.question.partial.header')
+            @include('forum::question.partial.header')
 
 
 <section class="single">
@@ -11,7 +11,7 @@
                     <div class="widget category">
                        
                         <ul class="mt-20">
-                            @include('forum::public.question.partial.aside')
+                            @include('forum::question.partial.aside')
                         </ul>
                     </div>
                 </div>

@@ -39,7 +39,7 @@ class CategoryPublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('forum::category.names'))
-            ->view('forum::public.category.index')
+            ->view('forum::category.index')
             ->data(compact('categories'))
             ->output();
     }
@@ -61,7 +61,7 @@ class CategoryPublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('forum::category.names'))
-            ->view('forum::public.category.index')
+            ->view('forum::category.index')
             ->data(compact('categories'))
             ->output();
     }
@@ -82,7 +82,7 @@ class CategoryPublicController extends BaseController
         })->first(['*']);
 
         return $this->response->setMetaTitle(@$category->name . trans('forum::category.name'))
-            ->view('forum::public.category.show')
+            ->view('forum::category.show')
             ->data(compact('category'))
             ->output();
     }

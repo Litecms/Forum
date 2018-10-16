@@ -1,10 +1,10 @@
-            @include('forum::public.category.partial.header')
+            @include('forum::category.partial.header')
 
             <section class="grid">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3">
-                            @include('forum::public.category.partial.aside')
+                            @include('forum::category.partial.aside')
                         </div>
                         <div class="col-md-9 ">
                             <div class="main-area parent-border list-item">
